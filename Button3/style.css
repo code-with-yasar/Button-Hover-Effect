@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin-top: 20%;
+    margin-left: 40%;
+    background-color: black;
+}
+
+.btn-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Hide the checkbox */
+    .btn-container input {
+      display: none;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      font-size: 20px;
+      font-weight: 700;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      color: rgb(59, 59, 211);
+      background: #000;
+      border: 3px solid blue;
+      border-radius: 50px;
+      box-shadow: 0 0 20px blue;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover .text-processing{
+      background: url(./bg-img.jpg);
+      background-size: cover;
+      background-clip: text;
+      color: transparent;
+      animation: animate 4s linear infinite;
+      box-shadow: 0 0 25px darkblue
+                  0 0 50px blue,
+                  0 0 200px darkblue;
+    }
+    @keyframes animate {
+        to {
+            background-position: 500px;
+        }
+    }
+
+    /* Default: Show "Download" */
+    .text-download {
+      display: block;
+    }
+    .text-processing {
+      display: none;
+    }
+
+    /* When checkbox is checked → show "Processing" */
+    .btn-container input:checked + label .text-download {
+      display: none;
+    }
+    .btn-container input:checked + label .text-processing {
+      display: block;
+      animation: moving 4s linear infinite;
+    }
+    @keyframes moving {
+        to {
+            background-position: 500px;
+        }
+    }
